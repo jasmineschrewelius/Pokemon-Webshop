@@ -1,6 +1,9 @@
-.ProductList {
-    margin-top: 150px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5px;
+.Title{
+    margin-top: 50px;
+    
+   
+}
+
+.Searchbox {
+    margin-top: 50px;
 }
