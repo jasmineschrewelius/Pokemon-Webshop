@@ -1,7 +1,7 @@
 import './Searchbox.css';
 import { useState } from "react";
-import { ProductList } from "./ProductList";
-import ProductResult from "./ProductResult";
+import { ProductList } from "../ProductList";
+import ProductResult from "../Product/Product";
 import React from "react";
 
 

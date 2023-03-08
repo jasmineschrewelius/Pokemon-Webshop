@@ -1,0 +1,12 @@
+.Product {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px;
+}
+
+.Product button {
+    margin-right: 10px;
+}
+

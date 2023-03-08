@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Searchbox from './components/Searchbox';
+import Searchbox from './components/Searchbox/Searchbox';
 import Shoppingcart from './components/Shoppingcart';
 
 
@@ -21,7 +21,7 @@ function App() {
 
 
      <div className='Title'>
-      <h1>My Webshop</h1>
+      <h1>Pokemon Webshop</h1>
 
 
 
