@@ -1,3 +1,4 @@
+import PopUp from '../PopUp/PopUp';
 import './Product.css';
 
 
@@ -6,15 +7,15 @@ function ProductResult(props) {
 
 
 
-
-
-    // visa produkt namn, bild, pris, köpa knapp, länk till mer info
+    
     return (
         <div className="ProductResult">
 
      <h3>Search Result</h3>
 
          <ul>
+            
+
 
             {props.product.map((product,index) => {
                 return (
@@ -23,8 +24,8 @@ function ProductResult(props) {
                      <img src={product.image} alt="" width={70}/> 
 
                      {product.name} 
-
-                     <p>More info</p>
+                     
+                    <PopUp name={product.name} image={product.image} information={product.info}/>
                      
                      {product.price} 
                      

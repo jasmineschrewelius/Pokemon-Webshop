@@ -1,0 +1,26 @@
+.Overlay {
+    
+    position: relative;
+    width: 100;
+    height: 100;
+}
+
+.Modul-container {
+    background-color: white;
+    border: 2px solid black;
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 10%;
+    left: -100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+}
+
+.Modul-info, .p  {
+    text-transform: capitalize;
+}
+
+.Close-button {
+   margin-top: 100px;
+}
