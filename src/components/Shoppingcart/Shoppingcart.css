@@ -1,0 +1,17 @@
+.Shoppingcart {
+    border: 2px solid black;
+
+}
+
+.ShoppingHead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    
+}
+
+.Cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}

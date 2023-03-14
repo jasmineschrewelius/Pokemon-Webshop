@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import PopUp from '../PopUp/PopUp';
+import Shoppingcart from '../Shoppingcart/Shoppingcart';
 import './Product.css';
 
 
@@ -6,7 +8,41 @@ function ProductResult(props) {
 
 
 
+  const [CartProducts, setCartProducts] = useState([]);
 
+  
+
+
+  const addToCart = (image, name, price, qty) => {   // add to cart
+    const newProd = [...CartProducts]
+    
+    const newCart = newProd.find((product) => product.name == name);
+   
+    if(newCart ) {
+      newCart.qty++;
+      
+    } else { ;
+     newProd.push({image, name, qty, price})
+    } 
+    setCartProducts(newProd); 
+
+  }
+
+  
+  
+
+  const onRemove = (product) => {    // remove product tru trashbin icon
+    setCartProducts((oldState) => {
+        const ProdIndex = oldState.findIndex((item) => item.id === product.id);
+        if (ProdIndex !== -1) {
+            oldState.splice(ProdIndex, 1)
+        }
+        return [...oldState];
+
+    })
+
+
+  }
     
     return (
         <div className="ProductResult">
@@ -14,8 +50,6 @@ function ProductResult(props) {
      <h3>Search Result</h3>
 
          <ul>
-            
-
 
             {props.product.map((product,index) => {
                 return (
@@ -29,7 +63,7 @@ function ProductResult(props) {
                      
                      {product.price} 
                      
-                     <button>Add To Cart</button>
+                     <button onClick={() => addToCart(product.image, product.name, product.price, product.qty)} >Add To Cart</button>
                      </li>
                 )
 
@@ -38,6 +72,11 @@ function ProductResult(props) {
 
          </ul>
         
+         <div className='Shoppingcart'>
+        < Shoppingcart   products={CartProducts}  onRemove={onRemove}/>
+
+
+     </div>
         
          </div>
     )
