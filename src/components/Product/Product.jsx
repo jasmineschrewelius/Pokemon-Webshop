@@ -28,6 +28,7 @@ function ProductResult(props) {  // function
 
 
   const onRemove = (name) => {    // remove function taking in product name
+    console.log(name);           // show name of the product
     const changeProd = CartProducts.filter((item) => item.name !== name); // create changeProd and filter thru CartProducts delete the product with that name
     setCartProducts(changeProd);  // set setCartProducts to changeProd
   }
@@ -38,12 +39,11 @@ function ProductResult(props) {  // function
     return (
         <div className="ProductResult">
 
-     <h3>Search Result</h3>
-
          <ul>
 
             {props.product.map((product,index) => {
                 return (
+
                     <li className="Product" key={index}> 
                      
                      <img src={product.image} alt="" width={70}/> 

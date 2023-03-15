@@ -1,17 +1,25 @@
-.Shoppingcart {
-    border: 2px solid black;
-
-}
 
 .ShoppingHead {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 40px;
+    font-size: 20px;
+}
+
+.Cart{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
+    position: relative;
     
 }
 
-.Cart {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+.empty {
+    align-items: center;
+}
+
+.Total {
+   position: absolute;
+   top: 100%;
+   right: 50%;
 }

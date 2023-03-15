@@ -1,10 +1,15 @@
 .Title{
     margin-top: 50px;
     text-align: center;
-   
+    font-size: 50px;
+   background-color: rgb(248, 181, 80);
 }
 
 .Searchbox {
     margin-top: 70px;
     text-align: center;
+}
+
+.App {
+    margin: 5px;
 }
