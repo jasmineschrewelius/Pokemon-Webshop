@@ -6,8 +6,8 @@ import { BsFillTrash3Fill } from "react-icons/bs";
 function Shoppingcart({
   products,
   onRemove,
-}) {
 
+}) {
 
 
 
@@ -41,15 +41,16 @@ function Shoppingcart({
           </div>
 
 
-         <button className="Remove-button" onClick={() => onRemove(product)}>
+         <button className="Remove-button" onClick={() => onRemove(product.name)}>
           <BsFillTrash3Fill/>
           </button>
 
           </div>
         ))}
 
-        Total amount: 
-
+        <div className="Total"> 
+        <h5>Total price :{products.reduce((total, product)=>total+(product.price*product.qty),0)}</h5>
+        </div>
         </div>
 
 

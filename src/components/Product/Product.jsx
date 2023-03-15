@@ -4,46 +4,37 @@ import Shoppingcart from '../Shoppingcart/Shoppingcart';
 import './Product.css';
 
 
-function ProductResult(props) {
+function ProductResult(props) {  // function 
 
 
 
-  const [CartProducts, setCartProducts] = useState([]);
-
-  
+  const [CartProducts, setCartProducts] = useState([]); // set state using useState
 
 
-  const addToCart = (image, name, price, qty) => {   // add to cart
-    const newProd = [...CartProducts]
-    
-    const newCart = newProd.find((product) => product.name == name);
+
+  const addToCart = (image, name, price, qty) => {   // addToCart function taking in image,name, price, qty
+    const newProd = [...CartProducts]      // create new array and copy CartProducts
+
+    const newCart = newProd.find((product) => product.name == name); // create newCart and use find to se if the product is already there
    
-    if(newCart ) {
-      newCart.qty++;
+    if(newCart) {     // if the product already exists, do this
+      newCart.qty++;   // update quantity
       
-    } else { ;
-     newProd.push({image, name, qty, price})
+    } else { ;        // if the product dont exist, do this
+     newProd.push({image, name, qty, price})   // push the product in newProd array
     } 
-    setCartProducts(newProd); 
-
+    setCartProducts(newProd);  // set the setCartProducts to newProd
   }
 
-  
-  
 
-  const onRemove = (product) => {    // remove product tru trashbin icon
-    setCartProducts((oldState) => {
-        const ProdIndex = oldState.findIndex((item) => item.id === product.id);
-        if (ProdIndex !== -1) {
-            oldState.splice(ProdIndex, 1)
-        }
-        return [...oldState];
-
-    })
-
-
+  const onRemove = (name) => {    // remove function taking in product name
+    const changeProd = CartProducts.filter((item) => item.name !== name); // create changeProd and filter thru CartProducts delete the product with that name
+    setCartProducts(changeProd);  // set setCartProducts to changeProd
   }
-    
+
+ 
+
+
     return (
         <div className="ProductResult">
 
@@ -73,7 +64,7 @@ function ProductResult(props) {
          </ul>
         
          <div className='Shoppingcart'>
-        < Shoppingcart   products={CartProducts}  onRemove={onRemove}/>
+        < Shoppingcart   products={CartProducts}   onRemove={onRemove}/>
 
 
      </div>
