@@ -1,14 +1,14 @@
 import React from "react";
 
 
-const PopWindow = ({open, onClose, prod, img, info}) => {     // accepts the state open
+const PopWindow = ({open, onClose, prod, img, info}) => {     // function that accepts open,onClose,prod,img,info
 
     if(!open) return null           // if open is not  true, return nothing
 
     return (
 
         <div className="Overlay">
-            <div className="Modul-container">
+            <div className="Modul-container"> {/*create the Pop Up window*/}
                 <img src={img} alt="" />
 
                 <div className="Modul-info">
@@ -16,7 +16,7 @@ const PopWindow = ({open, onClose, prod, img, info}) => {     // accepts the sta
                 <h1>{prod}</h1>
                 <p>Element: {info}</p>
 
-                <button className="Close-button" onClick={onClose}>Close</button>
+                <button className="Close-button" onClick={onClose}>Close</button> {/*create button that close when clicked */}
                 
 
 

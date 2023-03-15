@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./PopUp.css";
 import PopWindow from "./PopWindow";
 
-export default function PopUp(props) {  // accepts props
+export default function PopUp(props) {  // fucntion that accepts props
 
 
-    const [openWindow, setOpenWindow] = useState(false);   // define the state using UseState
+    const [openWindow, setOpenWindow] = useState(false);   // set the initial state to false using UseState
 
  
     return (

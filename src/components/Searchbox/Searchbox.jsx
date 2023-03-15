@@ -1,16 +1,16 @@
 import './Searchbox.css';
 import { useState } from "react";
 import { ProductList } from "../ProductList";
-import ProductResult from "../Product/Product";
+import Product from "../Product/Product";
 import React from "react";
 
 
 function Searchbox ()  {
 
  
-    const [value, setValue] = useState('');  // useState to set state
+    const [value, setValue] = useState('');  // set initial state using useState
 
-    const [result , setResult] = useState([]);
+    const [result , setResult] = useState([]); // set initial state using useState
 
 
     const onChange = (event) => {   // take the event(changes) and setValue to that value
@@ -29,7 +29,7 @@ function Searchbox ()  {
       product.info.toLocaleLowerCase().includes(searchInput);       // return what product info includes the users input
       
      })
-     setResult(result);
+     setResult(result);  // set state to result
 
      console.log(result);
      console.log('search', searchInput);
@@ -49,7 +49,7 @@ function Searchbox ()  {
 
     
             
-         < ProductResult product={result}  onClick={(index) => {searchProd(index)}} />
+         < Product product={result}  onClick={(index) => {searchProd(index)}} /> {/*send important data to ProductResult */}
           
                   
            </div>

@@ -4,7 +4,7 @@ import Shoppingcart from '../Shoppingcart/Shoppingcart';
 import './Product.css';
 
 
-function ProductResult(props) {  // function 
+function Product(props) {  // function 
 
 
 
@@ -41,7 +41,7 @@ function ProductResult(props) {  // function
 
          <ul>
 
-            {props.product.map((product,index) => {
+            {props.product.map((product,index) => { {/*create the product search results */}
                 return (
 
                     <li className="Product" key={index}> 
@@ -73,4 +73,4 @@ function ProductResult(props) {  // function
     )
 }
 
-export default ProductResult;
+export default Product;
